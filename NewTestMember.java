@@ -34,9 +34,11 @@ public class NewTestMember {
 		case 'o': 
 		    save(); 
 		    break; 
-	    	case 'f': 
+		case 'f': 
 		    showHTML(); 
-		    break; 
+		    break;
+		case 'l': 
+		    browser(); 
 	    }
 
 	} while (true);  
@@ -111,24 +113,36 @@ public class NewTestMember {
 
     }
 
-	public static void showHTML(){ 
-		File file = null; 
-	    	try { 
-		    file = new File("Member.html"); 
+    public static void showHTML(){ 
+	File file = null; 
+	try { 
+	    file = new File("Member.html"); 
 
-		    Scanner fScan = new Scanner (file); 
-		    String s = null; 
-		    System.out.println("=============================="); 
-		    while (fScan.hasNext()){
-			f = fScan.nextLine();
-			System.out.println(s); 
-		}
-		System.out.println("==============================");
-		} catch (FileNotFoundException e){ 
-		    e.printStackTrace(); 
-		}
-
+	    Scanner fScan = new Scanner (file); 
+	    String s = null; 
+	    System.out.println("=============================="); 
+	    while (fScan.hasNext()){
+		f = fScan.nextLine();
+		System.out.println(s); 
+	    }
+	    System.out.println("==============================");
+	} catch (FileNotFoundException e){ 
+	    e.printStackTrace(); 
 	}
+
+    }
+
+    public static void browser() {c static void showHTMLFile( String fileName ) {
+       if(Desktop.isDesktopSupported()) {
+	      try {
+	         File file = new File("Member.html"); // fileNae example: "hw01.html".
+	         Desktop.getDesktop().browse( file.toURI() );
+	      } catch ( Exception e ) { e.printStackTrace(); }
+      }
+    } 
+    	
+    }
+
 
 }
 
